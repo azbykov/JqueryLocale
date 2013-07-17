@@ -18,7 +18,7 @@ console.log(euro);
 //€ 25.00 - string;
 
 //unlocale
-var price = $.locale.price('€ 25');
+var price = $.locale.unlocale('€ 25');
 console.log(price);
 //25 - integer;
 
