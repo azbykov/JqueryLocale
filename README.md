@@ -21,7 +21,7 @@ console.log(euro);
 //unlocale
 var price = $.locale.unlocale('€ 25');
 console.log(price);
-//25 - integer;
+//25 - number;
 
 //percent
 var percent = $.locale.percent(33);
