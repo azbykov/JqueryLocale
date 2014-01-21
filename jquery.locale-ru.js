@@ -1,8 +1,8 @@
 /* Russian (UTF-8) initialisation for the jQuery locale plugin. */
 /* Written by Aleksandr Bykov (azbykov@gmail.com). */
 jQuery(function($){
-    $.locale.settings = {
-        region: 'ru',
+	$.locale.region = 'ru';
+    $.locale.settings['ru'] = {
         //rubles
         currencySuffix: '&#160р.',
         currencySeparate: '&#160;',
@@ -14,9 +14,11 @@ jQuery(function($){
 
     $.locale.date = function() {
         this.setDate(arguments);
-        return this.dateObject.day + this.settings.dateSeparate +
-            this.dateObject.month + this.settings.dateSeparate +
-            this.dateObject.year;
+        return [
+            this.dateObject.day,
+            this.dateObject.month,
+            this.dateObject.year
+        ].join(this.settings.dateSeparate);
     };
 
     $.locale.unLocaleDate = function(dateObject) {

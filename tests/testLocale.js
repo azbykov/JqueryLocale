@@ -10,6 +10,7 @@ test('Test int method', function() {
     ok($.locale.int('sdfsd') === '&#8212;');
     ok($.locale.int('sdfsd', 2) === '&#8212;');
     ok($.locale.int('sdfsd', 'sfsdf') === '&#8212;');
+	ok($.locale.getRegion(), 'en');
 });
 
 test('Price method', function() {

@@ -1,8 +1,8 @@
 Jquery.locale.js
 ========
+v.1.2
 
 Very small Jquery plugin for locale numbers, prices, dates, percents
-
 
 
 ## Usage
