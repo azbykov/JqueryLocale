@@ -41,14 +41,16 @@ If you want locale date, use method date(options)
 If call method date without options, you get localized today date
 
 ```javascript
-var today = $.locale.date(); // => today format mm/dd/yyyy - string
+
 ```
 
 Options:
+* options - empty
 * options - {Number} timestamp
 * options - {Array} [day, month, year]
 
 ```javascript
+var date = $.locale.date(); // => today format mm/dd/yyyy - string
 var date = $.locale.date(1388534400); // => 01/01/2014 - string
 var date = $.locale.date(31, 12, 2013); // => 12/31/2013 - string
 ```
@@ -62,10 +64,5 @@ If you want unlocale use unlocale method
 var price = $.locale.unlocale('€ 25,75'); // => 25.75 - number
 var percent = $.locale.unlocale('33%'); // => 33 - number
 var integer = $.locale.unlocale('10,000,000'); // => 10000000 - number
-```
-
-##### Unlocale date
-
-```javascript
-var price = $.locale.unlocale('01/01/2014'); // => 1388534400 - number
+var date = $.locale.unlocale('01/01/2014'); // => 1388534400 - number
 ```
