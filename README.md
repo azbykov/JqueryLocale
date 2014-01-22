@@ -14,12 +14,16 @@ Very small Jquery plugin for locale numbers, prices, dates, percents
 
 ## Usage
 
-locale number:
+Locale number:
 
 ```javascript
 var int = $.locale.int(10000); // => 10,000 - string
 ```
+You can add how many symbols showing after comma with add second argument
 
+```javascript
+var int = $.locale.int(10000,4); // => 10,000.0000 - string
+```
 
 Locale pricing:
 
@@ -66,3 +70,27 @@ var percent = $.locale.unlocale('33%'); // => 33 - number
 var integer = $.locale.unlocale('10,000,000'); // => 10000000 - number
 var date = $.locale.unlocale('01/01/2014'); // => 1388534400 - number
 ```
+
+
+## Add new region to jqueryLocale
+To add a location, you need to add settings object
+
+```javascript
+    $.locale.settings[regionId] = {
+        currencySuffix,
+        currencySeparate,
+        currencyDecimalPoint,
+        dateSeparate,
+        currencyPrefix,
+        entity
+    };
+```
+
+On the page add first
+```javascript
+$.locale.region(regionId);
+
+```
+
+## Work with some regions on 1 page
+
