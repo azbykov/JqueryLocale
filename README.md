@@ -8,7 +8,7 @@ Very small Jquery plugin for locale numbers, prices, dates, percents
 ## Installation
 
 ```html
-<script src="/path/to/jquery.cookie.js"></script>
+<script src="/path/to/jqueryLocale.js"></script>
 ```
 
 
