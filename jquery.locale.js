@@ -6,26 +6,31 @@
 
 (function($) {
     function Locale() {
-		this.region = 'en'
+        this.region = 'en'
 
         this.settings = {
-			en: {
-				currencyPrefix: '&#8364; ',//€
-				currencySuffix: '',
-				entity: '&#8212;',
-				currencySeparate: ',',
-				currencyDecimalPoint: '.',
-				dateSeparate: '/'
-			}
-		};
+            en: {
+                currencyPrefix: '&#8364; ',//€
+                currencySuffix: '',
+                entity: '&#8212;',
+                currencySeparate: ',',
+                currencyDecimalPoint: '.',
+                dateSeparate: '/'
+            }
+        };
+
+        this.region = function(region) {
+            this.region = region;
+            return this;
+        };
 
         this.getRegion = function() {
             return this.region;
         };
 
-		this.getSettings = function(key) {
-			return (key && this.settings[key]) ? this.settings[key] : this.settings[this.region];
-		};
+        this.getSettings = function(key) {
+            return (key && this.settings[key]) ? this.settings[key] : this.settings[this.region];
+        };
 
         // Dates
         this.dateObject = {};
@@ -101,13 +106,13 @@
         };
 
         this.percent = function(val, comma) {
-            return this.differentNumbers(val, this.getComma(comma))+'%';
+            return this.differentNumbers(val, this.getComma(comma)) + '%';
         };
 
         this.unLocale = function(val) {
             var space = /\s/g;
             var result;
-			var settings = this.getSettings();
+            var settings = this.getSettings();
             if (typeof val == 'number' ) {
                 return val;
             }
